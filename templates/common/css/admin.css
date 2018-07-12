@@ -1,0 +1,26 @@
+
+.admin-wrap {
+    padding-top: 30px;
+}
+
+.admin-wrap p {
+    padding-right: 27px;
+}
+
+.admin-wrap .gf-header {
+    padding:1px 17px 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+.admin-wrap .postbox-container {
+    margin: 0 20px 0 0;
+}
+
+.admin-wrap .vertical {
+    display: block;
+}
+
+.wp_list_gf_templates th {
+    font-weight: bold;
+}
+

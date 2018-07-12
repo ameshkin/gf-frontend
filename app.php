@@ -222,6 +222,9 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
         $tabindex = $atts['tabindex'];
       }
 
+      if(!$form['gf_frontend']['gf_template']) {
+        $form['gf_frontend']['gf_template'] = 'default';
+      }
 
       $template_folder = WP_CONTENT_DIR . self::PLUGIN_DIR . self::APP_DIR . '/templates/frontend/'. $form['gf_frontend']['gf_template'].'/';
       $template_uri    = plugins_url() . self::APP_DIR. '/templates/frontend/'. $form['gf_frontend']['gf_template'];
@@ -379,8 +382,12 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
     function admin_menu()
     {
 
+      $icon =<<<EOS
+data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMTUgNzcgNTgxIDY0MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtMTUgNzcgNTgxIDY0MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGcgaWQ9IkxheWVyXzIiPjxwYXRoIGZpbGw9IiM4Mjg3OGMiIGQ9Ik00ODkuNSwyMjdMNDg5LjUsMjI3TDMxNS45LDEyNi44Yy0yMi4xLTEyLjgtNTguNC0xMi44LTgwLjUsMEw2MS44LDIyN2MtMjIuMSwxMi44LTQwLjMsNDQuMi00MC4zLDY5Ljd2MjAwLjVjMCwyNS42LDE4LjEsNTYuOSw0MC4zLDY5LjdsMTczLjYsMTAwLjJjMjIuMSwxMi44LDU4LjQsMTIuOCw4MC41LDBMNDg5LjUsNTY3YzIyLjItMTIuOCw0MC4zLTQ0LjIsNDAuMy02OS43VjI5Ni44QzUyOS44LDI3MS4yLDUxMS43LDIzOS44LDQ4OS41LDIyN3ogTTQwMSwzMDAuNHY1OS4zSDI0MXYtNTkuM0g0MDF6IE0xNjMuMyw0OTAuOWMtMTYuNCwwLTI5LjYtMTMuMy0yOS42LTI5LjZjMC0xNi40LDEzLjMtMjkuNiwyOS42LTI5LjZzMjkuNiwxMy4zLDI5LjYsMjkuNkMxOTIuOSw0NzcuNiwxNzkuNiw0OTAuOSwxNjMuMyw0OTAuOXogTTE2My4zLDM1OS43Yy0xNi40LDAtMjkuNi0xMy4zLTI5LjYtMjkuNnMxMy4zLTI5LjYsMjkuNi0yOS42czI5LjYsMTMuMywyOS42LDI5LjZTMTc5LjYsMzU5LjcsMTYzLjMsMzU5Ljd6IE0yNDEsNDkwLjl2LTU5LjNoMTYwdjU5LjNIMjQxeiIvPjwvZz48L3N2Zz4=
+EOS;
+
       // admin menu
-      add_menu_page(self::APP_NAME, self::APP_NAME, 'manage_options', self::APP_SLUG.'-settings', self::APP_OPTION_CLASS_NAME.'::admin_home',  WP_CONTENT_URL.self::PLUGIN_DIR.self::APP_DIR .'/templates/common/images/icon.png');
+      add_menu_page(self::APP_NAME, self::APP_NAME, 'manage_options', self::APP_SLUG.'-settings', self::APP_OPTION_CLASS_NAME.'::admin_home',  $icon);
       add_submenu_page( self::APP_SLUG, 'Options', 'Themes', 'manage_options',  self::APP_SLUG.'-help', self::APP_OPTION_CLASS_NAME.'::submenu1' );
       //add_submenu_page( self::APP_SLUG, 'Themes', 'Settings', 'manage_options', self::APP_SLUG.'-submenu2', self::APP_OPTION_CLASS_NAME.'::submenu2' );
 

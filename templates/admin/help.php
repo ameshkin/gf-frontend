@@ -51,7 +51,65 @@
                         </li>
                     </ul>
                     <div class="sub">
-                        <p class="akismet-right-now">These API endpoints are not used at the moment. We can use an external api to get data from one site and display it in on others.</p>
+                        <p>These API endpoints are not used at the moment. We can use an external api to get data from one site and display it in on others.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div  class="postbox ">
+            <h2 class="gf-header">
+                <span>Shortcodes</span>
+            </h2>
+
+            <div class="inside">
+                <div class="main">
+
+                    <p>As of now there is only one shortcode, that is very similar to the gravity forms shortcode.</p>
+                    <div class="sub">
+                        <p>
+                            [gravityform_frontend id=2 title="override title" description="desc override" ajax=true tabindex=49]
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="postbox-container">
+
+        <div  class="postbox ">
+            <h2 class="gf-header">
+                <span>Spinners</span>
+            </h2>
+
+            <div class="inside">
+                <div class="main">
+                    <div class="sub">
+                        <p>You can add or delete spinners simply by placing the image file in this directory: </p>
+                        <p>templates/common/spinners</p>
+
+                        <p>One feature I'd like to add is SVG support.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div  class="postbox ">
+            <h2 class="gf-header">
+                <span>Templates</span>
+            </h2>
+
+            <div class="inside">
+                <div class="main">
+                    <div class="sub">
+                        <p>You can add templates for admin and frontend skins in the templates directory </p>
                     </div>
                 </div>
             </div>

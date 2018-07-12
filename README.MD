@@ -2,6 +2,9 @@
 
 The main gravity forms plugin must be turned on for this plugin to work.  This plugin 
 
+### Shortcode
+
+[gravityform_frontend id=2 title="override title" description="desc override" ajax=true tabindex=49]
 
 
 #### PHASE II

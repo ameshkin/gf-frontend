@@ -8,7 +8,7 @@ class GFTemplateAddOn  extends GFAddOn {
    * TODO: combine settings
    * @var string
    */
-  protected $_version = GF_FRONTEND_TEMPLATES_VERSION;
+  protected $_version = '2.1';
   protected $_min_gravityforms_version = '1.9';
   protected $_slug = 'gf_frontend';
   protected $_path = 'gf-frontend/app-loader.php';
@@ -142,7 +142,7 @@ class GFTemplateAddOn  extends GFAddOn {
 
 
     include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/tabs.php');
-    include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/home.php');
+    include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/settings.php');
 
 
     //TODO: show templates here
@@ -314,7 +314,7 @@ class GFTemplateAddOn  extends GFAddOn {
             'type'    => 'text',
             'name'    => 'gf_preloader_position',
             'tooltip' => 'Place spinners in /wp-content/plugins/gf-frontend/templates/common/spinners',
-            'description' => esc_html__( 'Enter an element: .class OR #id', 'gf-frontend' ),s
+            'description' => esc_html__( 'Enter an element: .class OR #id', 'gf-frontend' ),
           ),
         ),
       ),

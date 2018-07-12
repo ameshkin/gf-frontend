@@ -239,11 +239,11 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
       $source_js  = $template_folder.'/js/main.js';
 
       if(file_exists($source_css)) {
-        wp_enqueue_style( 'gf-template-'.$template, $source_css, '', rand(0,343) );
+        wp_enqueue_style( 'gf-template-'.$template, $template_uri.'/css/main.css', '', rand(0,343) );
       }
 
       if(file_exists($source_js)) {
-        wp_enqueue_script( 'gf-template-'.$template, $source_js, '', rand(0,2343), true );
+        wp_enqueue_script( 'gf-template-'.$template, $template_uri.'/js/main.js', '', rand(0,2343), true );
       }
 
 

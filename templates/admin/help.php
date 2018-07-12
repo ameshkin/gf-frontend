@@ -72,47 +72,6 @@
                         <p>
                             [gravityform_frontend id=2 title="override title" description="desc override" ajax=true tabindex=49]
                         </p>
-<<<<<<< HEAD
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="postbox-container">
-
-        <div  class="postbox ">
-            <h2 class="gf-header">
-                <span>Spinners</span>
-            </h2>
-
-            <div class="inside">
-                <div class="main">
-                    <div class="sub">
-                        <p>You can add or delete spinners simply by placing the image file in this directory: </p>
-                        <p>templates/common/spinners</p>
-
-                        <p>One feature I'd like to add is SVG support.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div  class="postbox ">
-            <h2 class="gf-header">
-                <span>Templates</span>
-            </h2>
-
-            <div class="inside">
-                <div class="main">
-                    <div class="sub">
-                        <p>You can add templates for admin and frontend skins in the templates directory </p>
-=======
->>>>>>> 3e4cbafffefff36cc5067c075a15fad28b238d55
                     </div>
                 </div>
             </div>

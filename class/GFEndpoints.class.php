@@ -15,25 +15,33 @@ class GFEndpoints
 {
 
 
-  /**
-   * Get one form called from ajax function
-   * @param $data
-   */
-  public static function get_one_form( $data ) {
 
-    $form = GFAPI::get_form($data['id']);
+
+  public function __construct()
+  {
+
+
+
+  /*
+    register_rest_route( 'home/v1', '/masonary', array(
+      'methods' => WP_REST_Server::READABLE,
+      'callback' => array( $this, 'get_home_page' ),
+    ) );
+
+*/
+
+    /*
+    add_action( 'rest_api_init', function () {
+      register_rest_route( 'home/masonary', '/author/(?P<id>\d+)', array(
+        'methods' => 'GET',
+        'callback' => 'my_awesome_func',
+      ) );
+    } );
+
+    */
 
   }
 
-
-  /**
-   *
-   */
-  public static function get_all_forms() {
-
-    wp_send_json(GFAPI::get_forms() );
-
-  }
 
 
 

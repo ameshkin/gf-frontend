@@ -142,7 +142,7 @@ class GFTemplateAddOn  extends GFAddOn {
 
 
     include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/tabs.php');
-    include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/settings.php');
+    include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/home.php');
 
 
     //TODO: show templates here
@@ -314,7 +314,7 @@ class GFTemplateAddOn  extends GFAddOn {
             'type'    => 'text',
             'name'    => 'gf_preloader_position',
             'tooltip' => 'Place spinners in /wp-content/plugins/gf-frontend/templates/common/spinners',
-            'description' => esc_html__( 'Enter an element: .class OR #id', 'gf-frontend' ),
+            'description' => esc_html__( 'Enter an element: .class OR #id', 'gf-frontend' ),s
           ),
         ),
       ),

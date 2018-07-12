@@ -72,6 +72,7 @@
                         <p>
                             [gravityform_frontend id=2 title="override title" description="desc override" ajax=true tabindex=49]
                         </p>
+<<<<<<< HEAD
                     </div>
                 </div>
             </div>
@@ -110,6 +111,8 @@
                 <div class="main">
                     <div class="sub">
                         <p>You can add templates for admin and frontend skins in the templates directory </p>
+=======
+>>>>>>> 3e4cbafffefff36cc5067c075a15fad28b238d55
                     </div>
                 </div>
             </div>

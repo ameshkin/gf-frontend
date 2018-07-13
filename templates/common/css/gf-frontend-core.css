@@ -2800,3 +2800,24 @@ body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl dd {
         margin-right: 10px
     }
 }
+
+/*
+
+.gform_ajax_spinner {
+    margin-left: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-left: 4px solid gold;
+    animation: spinner 1.1s infinite linear;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+*/

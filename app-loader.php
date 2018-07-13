@@ -46,3 +46,9 @@ if (version_compare(phpversion(), '5.0', '>=')) {
     define('WR_LOADER', __FILE__);
     require_once(dirname(__FILE__) . '/app.php');
 }
+
+
+function gf_spinner_replace( $image_src, $form ) {
+  return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // relative to you theme images folder
+}
+add_filter( 'gform_ajax_spinner_url', 'gf_spinner_replace', 10, 2 );

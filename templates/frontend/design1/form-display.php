@@ -159,33 +159,40 @@ echo '</div>';
 <script>
   jQuery(document).ready(function($) {
 
-
     <?php if($form['gf_frontend']['gf_transition'] != 'none'): ?>
 
     var b   = $( "body" );
     var pos = $('<?php echo $form['gf_frontend']['gf_preloader_position']; ?>');
 
 
-    b.on( "click", ".gform_previous_button", function() {
-      pos.addClass("loading");
+    b.on( "click", ".gform_previous_button", function(e) {
+      pos.addClass('loading');
       $(this).parent().parent().addClass("animated <?php echo $form['gf_frontend']['gf_transition_previous']; ?>");
+      e.preventDefault();
     });
 
     // check for animations, and add
-    b.on( "click", ".gform_next_button", function() {
+    b.on( "click", ".gform_next_button", function(e) {
 
-      // TODO:  get position of spinner, and apply to appropriate class
-      pos.addClass("loading");
+      pos.addClass('loading');
       $(this).parent().parent().addClass("animated <?php echo $form['gf_frontend']['gf_transition_next']; ?>");
+      e.preventDefault();
     });
 
 
-    b.on( "click", "#gform_submit_button_<?php echo $form['id']; ?>", function() {
-      pos.addClass("loading");
+    b.on( "click", "#gform_submit_button_<?php echo $form['id']; ?>", function(e) {
+      pos.addClass('loading');
       $(this).parent().parent().addClass("animated <?php echo $form['gf_frontend']['gf_transition_submit']; ?>");
+      e.preventDefault();
     });
 
-    <?php endif; ?>
+    //remove loading spinner after next page
+    jQuery(document).bind('gform_post_render', function(){
+      pos.removeClass('loading');
+    });
+
+
+  <?php endif; ?>
 
   });
 </script>

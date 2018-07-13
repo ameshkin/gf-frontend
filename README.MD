@@ -7,6 +7,13 @@ The main gravity forms plugin must be turned on for this plugin to work.  This p
 [gravityform_frontend id=2 title="override title" description="desc override" ajax=true tabindex=49]
 
 
+
+#### KNOWN BUGS
+
+weirdness with animations on stage server
+
+
+
 #### PHASE II
 
 ######  TEMPLATE SYSTEM
@@ -15,3 +22,4 @@ The main gravity forms plugin must be turned on for this plugin to work.  This p
 ######  improve API
 ######  Fontawesome/Icon Support
 ######  Background Images for Forms
+

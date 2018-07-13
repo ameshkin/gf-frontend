@@ -184,6 +184,7 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
         'template' => 'default',
       ), $atts );
 
+      add_filter("gform_confirmation_anchor_2", create_function("","return false;"));
 
       //TODO: same options and attributes as gravity forms
       //title=false description=false ajax=true tabindex=49
@@ -448,13 +449,6 @@ if (class_exists(CG_APP_CLASS_NAME) && !$Gf_Frontend) {
   $Gf_Frontend = new Gf_Frontend();
 
   if ( is_admin() ) {
-
-
-    // TODO: need new shortcodes for overriding temlates completely
-    add_action( 'wp_ajax_cg_svg_action', 'Gf_Frontend::cg_svg_action_callback' );  //ajax for new svg
-    add_action( 'wp_ajax_nopriv_cg_svg_action', 'Gf_Frontend::cg_svg_action_callback' );   //ajax for new svg
-    add_action( 'wp_ajax_cg_file_save_action', 'Gf_Frontend::cg_file_save_action_callback' );  //ajax for saving files
-    add_action( 'wp_ajax_nopriv_cg_file_save_action', 'Gf_Frontend::cg_file_save_action_callback' );   //ajax for saving files
 
 
 

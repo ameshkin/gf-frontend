@@ -145,7 +145,7 @@ class GFTemplateAddOn  extends GFAddOn {
 
 
     include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/tabs.php');
-    include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/home.php');
+    include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/settings.php');
 
   }
 
@@ -157,6 +157,8 @@ class GFTemplateAddOn  extends GFAddOn {
    * @return array
    */
   public function plugin_settings_fields() {
+
+    // https://wpdev.designstudio.host/wp-admin/admin.php?page=gf_settings&subview=gf_frontend
     return array(
       array(
         'title'  => esc_html__( 'Gravity Forms Frontend Settings', 'gf-frontend' ),
@@ -165,9 +167,8 @@ class GFTemplateAddOn  extends GFAddOn {
             'name'              => 'gf_switch',
             'tooltip'           => esc_html__( '', 'gf-frontend' ),
             'label'             => esc_html__( 'Turn Plugin OFF', 'gf-frontend' ),
-            'type'              => 'checkbox',
-            'choices'             => 'small',
-            'feedback_callback' => array( $this, 'is_valid_setting' ),
+            'type'              => 'select',
+            'choices'           => GFUtility::get_bool(),
           )
         )
       )

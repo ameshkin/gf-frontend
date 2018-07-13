@@ -16,7 +16,6 @@ class  GFUtility extends GFAddOn {
   }
 
 
-
   /**
    * Get folder names of templates but that is all!
    * @param $path
@@ -40,6 +39,7 @@ class  GFUtility extends GFAddOn {
     }
     return $folders;
   }
+
 
   /**
    * //TODO: allow other animation libraries
@@ -110,7 +110,7 @@ class  GFUtility extends GFAddOn {
    */
   public static function _err($input) {
 
-    if(self::APP_DEBUG) {
+    if(Gf_Frontend::APP_DEBUG) {
       if(is_object($input) || is_array($input)) {
         echo '<pre>';
         print_r($input);
@@ -120,7 +120,5 @@ class  GFUtility extends GFAddOn {
       }
     }
   }
-
-
 }
 

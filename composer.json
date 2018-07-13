@@ -1,0 +1,19 @@
+{
+  "name": "ameshkin/gf-frontend",
+  "description": "A frontend templating system for Gravity Forms and Wordpress",
+  "keywords": [
+    "wordpress",
+    "gravity",
+    "forms",
+    "gravity forms",
+    "gravity forms templates"
+  ],
+  "homepage": "https://github.com/ameshkin/gf-frontend",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Amir Meshkin",
+      "email": "amir.meshkin@gmail.com"
+    }
+  ]
+}

@@ -186,8 +186,7 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
 
       add_filter("gform_confirmation_anchor_2", create_function("","return false;"));
 
-      //TODO: same options and attributes as gravity forms
-      //title=false description=false ajax=true tabindex=49
+      // TODO: if master switch for plugin is off, then default to gravity forms shortcode
 
       // get form with internal API
       $form = GFAPI::get_form($atts['id']);
@@ -231,6 +230,7 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
         $tabindex = $atts['tabindex'];
       }
 
+      // TODO: if none, then default to gravity forms shortcode
       if(!$form['gf_frontend']['gf_template']  || $form['gf_frontend']['gf_template'] == 'none') {
         $form['gf_frontend']['gf_template'] = 'default';
       }

@@ -314,7 +314,7 @@ class GFTemplateAddOn  extends GFAddOn {
             'type'    => 'text',
             'name'    => 'gf_preloader_position',
             'tooltip' => 'Place spinners in /wp-content/plugins/gf-frontend/templates/common/spinners',
-            'description' => esc_html__( 'Enter an element: .class OR #id', 'gf-frontend' ),s
+            'description' => esc_html__( 'Enter an element: .class OR #id', 'gf-frontend' ),
           ),
         ),
       ),

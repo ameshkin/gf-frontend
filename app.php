@@ -123,33 +123,42 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
       add_action('admin_menu', array($this, 'admin_menu'));
       //add_action('wp_dashboard_setup', 'dashboard_home');
 
-      /* won't work if user doesn't have access */
+      //add_action( 'plugins_loaded', 'GFEndpoints::register_rest' );
 
-      if(!function_exists('current_user_can')) {
-        include(ABSPATH . "../../wp wp-load.php");
-        require_once(ABSPATH.'wp-includes/pluggable.php');
-      }
+      add_action( 'plugins_loaded', array($this, 'register_routes' ));
 
+    }
+
+
+
+    /**
+     * Register endpoints which are not being used now
+     */
+    public static function register_routes() {
 
       if(  current_user_can('administrator') ) {
+
+        /* won't work if user doesn't have access */
 
         // custom API endpoint for gettin gall forms
         // http://localhost:3333/wp-json/gf-frontend/v1/forms
         register_rest_route( 'gf-frontend/v1', '/forms', array(
           'methods' => WP_REST_Server::READABLE,
-          'callback' =>  [$this,'get_all_forms'],
+          'callback' =>  ['GFEndpoints::get_all_forms'],
+          //'callback' =>  [$this,'get_all_forms'],
         ) );
 
         // custom API endpoint for getting one form by ID
         register_rest_route( 'gf-frontend/v1', '/form/(?P<id>\d+)', array(
           'methods' => 'GET',
-          'callback' =>  [$this,'get_one_form'],
+          'callback' =>  ['GFEndpoints::get_one_form'],
+          //'callback' =>  [$this,'get_one_form'],
         ) );
-
-
       }
-
     }
+
+
+
 
     /**
      *
@@ -167,24 +176,6 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
       echo '<p>Welcome to Custom Blog Theme! Need help? Contact the developer <a href="mailto:yourusername@gmail.com">here</a>. For WordPress Tutorials visit: <a href="https://www.wpbeginner.com" target="_blank">WPBeginner</a></p>';
     }
 
-    /**
-     *
-     */
-    public static function get_all_forms() {
-
-      wp_send_json(GFAPI::get_forms() );
-
-    }
-
-    /**
-     * Get one form called from ajax function
-     * @param $data
-     */
-    public static function get_one_form( $data ) {
-
-      $form = GFAPI::get_form($data['id']);
-
-    }
 
     /**
      * TODO: new shortcode for returning gravity form data via ajax json
@@ -483,8 +474,5 @@ if (class_exists(CG_APP_CLASS_NAME) && !$Gf_Frontend) {
 
     add_shortcode( 'gravityform_frontend', 'Gf_Frontend::gravityform_frontend_func' );
 
-
-
   }
-
 }

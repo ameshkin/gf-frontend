@@ -92,24 +92,15 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
 
       } else {
 
-        //TODO: make sure files exist
 
+        // core css
         $css1 = plugin_dir_url(__FILE__)  . 'templates/common/css/gf-frontend-core.css';
-        if(file_exists($css1)) {
+        wp_enqueue_style( 'gf-template-core',$css1, '', rand(0,343) );
 
-          // core css
-          wp_enqueue_style( 'gf-template-core',$css1, '', rand(0,343) );
-
-        }
-
-
+        // animate.css library
         $css2 = plugin_dir_url(__FILE__) . 'templates/common/css/animate.css';
-        if(file_exists($css1)) {
+        wp_enqueue_style( self::APP_NAMESPACE.'animate',  $css2);
 
-          // animate.css library
-          wp_enqueue_style( self::APP_NAMESPACE.'animate',  $css2);
-
-        }
       }
 
       $this->app_defaults = array(
@@ -136,9 +127,10 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
      */
     public static function register_routes() {
 
+      /*
       if(  current_user_can('administrator') ) {
 
-        /* won't work if user doesn't have access */
+        // won't work if user doesn't have access
 
         // custom API endpoint for gettin gall forms
         // http://localhost:3333/wp-json/gf-frontend/v1/forms
@@ -155,10 +147,9 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
           //'callback' =>  [$this,'get_one_form'],
         ) );
       }
+
+      */
     }
-
-
-
 
     /**
      *

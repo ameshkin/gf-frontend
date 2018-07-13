@@ -45,17 +45,17 @@ class GFTemplateAddOn  extends GFAddOn {
   // # SCRIPTS & STYLES -----------------------------------------------------------------------------------------------
 
   /**
+   * NO need to do this
    * Return the scripts which should be enqueued.
    *
    * @return array
    */
   public function scripts() {
 
-    //TODO: scripts need to load from wordpress/wp-content/plugins/gf-frontend/templates
 
     // get template here, and automatically import main.js if it exists
 
-
+/*
     $scripts = array(
       array(
         'handle'  => 'my_script_js',
@@ -78,6 +78,7 @@ class GFTemplateAddOn  extends GFAddOn {
     );
 
     return array_merge( parent::scripts(), $scripts );
+*/
   }
 
   /**
@@ -87,9 +88,8 @@ class GFTemplateAddOn  extends GFAddOn {
    */
   public function styles() {
 
-    //TODO: styles need to load from wordpress/wp-content/plugins/gf-frontend/templates
 
-
+    /*
     $styles = array(
       array(
         'handle'  => 'my_styles_css',
@@ -102,6 +102,8 @@ class GFTemplateAddOn  extends GFAddOn {
     );
 
     return array_merge( parent::styles(), $styles );
+
+    */
   }
 
 
@@ -133,23 +135,13 @@ class GFTemplateAddOn  extends GFAddOn {
    */
   public function plugin_page() {
 
-
-
     $data['title'] = 'Gravity Forms Frontend';
-    $data['active_tab'] = 'home';
     $active_tab    = 'home';
 
 
 
     include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/tabs.php');
     include(WP_CONTENT_DIR . Gf_Frontend::PLUGIN_DIR . Gf_Frontend::APP_DIR . '/templates/admin/home.php');
-
-
-    //TODO: show templates here
-
-
-
-
 
   }
 
@@ -166,11 +158,11 @@ class GFTemplateAddOn  extends GFAddOn {
         'title'  => esc_html__( 'Gravity Forms Frontend Settings', 'gf-frontend' ),
         'fields' => array(
           array(
-            'name'              => 'mytextbox',
+            'name'              => 'gf_switch',
             'tooltip'           => esc_html__( '', 'gf-frontend' ),
-            'label'             => esc_html__( 'General Plugin Options', 'gf-frontend' ),
-            'type'              => 'text',
-            'class'             => 'small',
+            'label'             => esc_html__( 'Turn Plugin OFF', 'gf-frontend' ),
+            'type'              => 'checkbox',
+            'choices'             => 'small',
             'feedback_callback' => array( $this, 'is_valid_setting' ),
           )
         )
@@ -313,8 +305,9 @@ class GFTemplateAddOn  extends GFAddOn {
             'label'   => esc_html__( 'Preloader Position', 'gf-frontend' ),
             'type'    => 'text',
             'name'    => 'gf_preloader_position',
+            'placeholder' => '.gform_page_footer',
             'tooltip' => 'Place spinners in /wp-content/plugins/gf-frontend/templates/common/spinners',
-            'description' => esc_html__( 'Enter an element: .class OR #id', 'gf-frontend' ),
+            'description' => esc_html__( 'For Example: .gform_page_footer', 'gf-frontend' ),
           ),
         ),
       ),

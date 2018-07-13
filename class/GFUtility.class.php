@@ -22,7 +22,7 @@ class  GFUtility extends GFAddOn {
    * @param $path
    * @return array
    */
-  function get_folder_names($path) {
+  public static function get_folder_names($path) {
 
     if ($handle = opendir($path)) {
 
@@ -47,7 +47,7 @@ class  GFUtility extends GFAddOn {
    * @param $path
    * @return array
    */
-  function get_animation_choices() {
+  public static function get_animation_choices() {
 
     $choices = [];
     $animations = ['none',

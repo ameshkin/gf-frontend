@@ -231,7 +231,7 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
         $tabindex = $atts['tabindex'];
       }
 
-      if(!$form['gf_frontend']['gf_template']) {
+      if(!$form['gf_frontend']['gf_template']  || $form['gf_frontend']['gf_template'] == 'none') {
         $form['gf_frontend']['gf_template'] = 'default';
       }
 

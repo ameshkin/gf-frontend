@@ -99,7 +99,7 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
 
         // animate.css library
         $css2 = plugin_dir_url(__FILE__) . 'templates/common/css/animate.css';
-        wp_enqueue_style( self::APP_NAMESPACE.'animate',  $css2);
+        wp_enqueue_style( self::APP_NAMESPACE.'animate',  $css2, '', rand(0,343));
 
       }
 
@@ -245,6 +245,7 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
       // if you want to inject more custom js/css you can use the gravity forms feature
       $source_css = $template_folder.'/css/main.css';
       $source_js  = $template_folder.'/js/main.js';
+
 
       if(file_exists($source_css)) {
         wp_enqueue_style( 'gf-template-'.$template, $template_uri.'/css/main.css', '', rand(0,343) );

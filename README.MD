@@ -10,7 +10,8 @@ The main gravity forms plugin must be turned on for this plugin to work.  This p
 
 #### KNOWN BUGS
 
-weirdness with animations on stage server
+1. jumping and weirdness with animations on stage server 
+
 
 
 

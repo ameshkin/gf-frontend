@@ -45,17 +45,19 @@ class GFTemplateAddOn  extends GFAddOn {
   // # SCRIPTS & STYLES -----------------------------------------------------------------------------------------------
 
   /**
+   * leaving this here in case we need it. if this function exists, but we don't pass scripts, we get an error
    * NO need to do this
    * Return the scripts which should be enqueued.
    *
    * @return array
    */
+  /*
   public function scripts() {
 
 
     // get template here, and automatically import main.js if it exists
 
-/*
+
     $scripts = array(
       array(
         'handle'  => 'my_script_js',
@@ -78,14 +80,16 @@ class GFTemplateAddOn  extends GFAddOn {
     );
 
     return array_merge( parent::scripts(), $scripts );
-*/
+
   }
+
+  */
 
   /**
    * Return the stylesheets which should be enqueued.
    *
    * @return array
-   */
+
   public function styles() {
 
 
@@ -103,9 +107,9 @@ class GFTemplateAddOn  extends GFAddOn {
 
     return array_merge( parent::styles(), $styles );
 
-    */
-  }
 
+  }
+   */
 
   // # FRONTEND FUNCTIONS --------------------------------------------------------------------------------------------
 

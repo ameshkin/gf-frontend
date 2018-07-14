@@ -264,64 +264,6 @@ if (!class_exists(CG_APP_CLASS_NAME)) {
     }
 
     /**
-     * @param $data
-     * @return null
-     */
-    function home_masonary($data) {
-
-
-      // TODO: need to get all images, all sizes for SRCSET
-      //TODO: temporary for home masonary perosnal page
-
-      $args = [
-        'post_type'     => 'masonary',
-        'numberposts'   => 10,
-        //'meta_value_num'=> 'NUMERIC',
-        'orderby'        => 'rand',
-      ];
-
-      $posts = get_posts($args);
-
-
-      //TODO: get images
-
-      $i = 0;
-      foreach($posts as $post) {
-
-        //$posts[$i]['image'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-
-        // get featured image
-        $posts[$i]->image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-
-
-        // get category
-        $posts[$i]->cat  = get_the_category( $post->ID );
-
-        // find out if this is a video
-        $posts[$i]->meta = get_post_meta( $post->ID);
-
-
-        //get_post_meta( $post_id, $key = '', $single = false )
-
-        $i++;
-
-      }
-
-      if ( empty( $posts ) ) {
-        return null;
-      }
-
-      //return $posts[0]->post_title;
-
-
-
-
-      wp_send_json( $posts ) ;
-
-
-    }
-
-    /**
      * Settings link
      * @param $links
      * @param $file

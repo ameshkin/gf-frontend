@@ -168,7 +168,7 @@ echo '</div>';
     b.on( "click", ".gform_previous_button", function(e) {
       pos.addClass('loading');
       $(this).parent().parent().addClass("animated <?php echo $form['gf_frontend']['gf_transition_previous']; ?>");
-      e.preventDefault();
+      //e.preventDefault();
     });
 
     // check for animations, and add
@@ -176,14 +176,14 @@ echo '</div>';
 
       pos.addClass('loading');
       $(this).parent().parent().addClass("animated <?php echo $form['gf_frontend']['gf_transition_next']; ?>");
-      e.preventDefault();
+      //e.preventDefault();
     });
 
 
     b.on( "click", "#gform_submit_button_<?php echo $form['id']; ?>", function(e) {
       pos.addClass('loading');
       $(this).parent().parent().addClass("animated <?php echo $form['gf_frontend']['gf_transition_submit']; ?>");
-      e.preventDefault();
+      //e.preventDefault();
     });
 
     //remove loading spinner after next page

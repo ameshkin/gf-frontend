@@ -15,10 +15,10 @@ The main gravity forms plugin must be turned on for this plugin to work.  This p
 
 #### PHASE II
 
-######  TEMPLATE SYSTEM
-######  show broken templates listing
-######  add svg spinner support
-######  improve API
-######  Fontawesome/Icon Support
+######  Master on/off switch for plugin
+######  in button spinner
+######  alert user to broken templates
+######  add svg spinner support with Fontawesome
+######  improve API and add more Endpoints
 ######  Background Images for Forms
 

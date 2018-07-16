@@ -137,6 +137,13 @@ echo '</div>';
     }
     <?php endif; ?>
 
+    <?php if($form['gf_frontend']['gf_steps'] === '0'): ?>
+    .gform_wrapper .gf_page_steps {
+        display: none;
+    }
+    <?php endif; ?>
+
+
 
     <?php if($form['gf_frontend']['gf_preloader'] === '0'  || $form['gf_frontend']['gf_preloader'] === 'none'): ?>
 
@@ -147,7 +154,7 @@ echo '</div>';
     }
 
 
-    /* TODO: add svg spinners */
+
     .loading {
         background: url(<?php echo '/wp-content/' . Gf_Frontend::APP_TEMPLATE_URI . '/common/spinners/' . $form['gf_frontend']['gf_preloader']; ?>) top center no-repeat;
     }

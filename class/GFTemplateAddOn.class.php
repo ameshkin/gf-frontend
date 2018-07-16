@@ -283,6 +283,13 @@ class GFTemplateAddOn  extends GFAddOn {
             'choices' => $bool
           ),
 
+          array(
+            'label'   => esc_html__( 'Steps', 'gf-frontend' ),
+            'type'    => 'select',
+            'name'    => 'gf_steps',
+            'description' => esc_html__( 'Should we show steps?', 'gf-frontend' ),
+            'choices' => $bool
+          ),
 
           // PHASE II:  choose page template
           /*
